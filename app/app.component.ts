@@ -14,6 +14,8 @@ import { Task } from './task.model';
 
     <edit-task [childSelectedTask]="selectedTask" (doneButtonClickedSender)="finishedEditing()"></edit-task>
 
+    <new-task (newTaskSender)="addTask($event)"></new-task>
+
     <!-- <ul>
       <li [class]="priorityColor(currentTask)" (click)="isDone(currentTask)" *ngFor="let currentTask of tasks">{{currentTask.description}} <button (click)="editTask()">Edit!</button></li>
     </ul>
@@ -81,6 +83,10 @@ export class AppComponent {
 
   finishedEditing() {
     this.selectedTask = null;
+  }
+
+  addTask(newTaskFromChild: Task) {
+    this.masterTaskList.push(newTaskFromChild);
   }
 }
 
