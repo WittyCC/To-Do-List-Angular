@@ -10,7 +10,7 @@ import { Task } from './task.model';
         <p>Task Complete? {{childSelectedTask.done}}</p>
 
         <hr>
-        
+
         <h3>Edit Task</h3>
         <label>Enter Task Description:</label>
         <input [(ngModel)]="childSelectedTask.description">
@@ -18,6 +18,7 @@ import { Task } from './task.model';
         <input type="radio" [(ngModel)]="childSelectedTask.priority" [value]="1">1 (Low Priority)<br>
         <input type="radio" [(ngModel)]="childSelectedTask.priority" [value]="2">2 (Medium Priority)<br>
         <input type="radio" [(ngModel)]="childSelectedTask.priority" [value]="3">3 (High Priority)
+        <br/>
         <button (click)="doneButtonClicked()">Done</button>
       </div>
     </div>
